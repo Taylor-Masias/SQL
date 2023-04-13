@@ -1,0 +1,32 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, stock INTEGER, price INTEGER, occasion TEXT);
+
+INSERT INTO store VALUES (1, "butterfly top-pink", 4, 24.99, "festival");
+INSERT INTO store VALUES (2, "butterfly top-purple", 8, 24.99, "festival");
+INSERT INTO store VALUES (3, "butterfly top-orange", 7, 24.99, "festival");
+INSERT INTO store VALUES (4, "denim shorts-frayed dark", 12, 22.99, "casual");
+INSERT INTO store VALUES (5, "denim shorts-frayed light", 9, 22.99, "casual");
+INSERT INTO store VALUES (6, "basic tank-blue", 2, 6.99, "casual");
+INSERT INTO store VALUES (7, "basic tank-white", 4, 6.99, "casual");
+INSERT INTO store VALUES (8, "basic tank-green", 0, 6.99, "casual");
+INSERT INTO store VALUES (9, "basic tank-pink", 3, 6.99, "casual");
+INSERT INTO store VALUES (10, "flutter skirt-pink", 2, 20.99, "casual");
+INSERT INTO store VALUES (11, "flutter skirt-blue", 1, 22.99, "casual");
+INSERT INTO store VALUES (12, "mini dress-satin blue", 4, 50.79, "cocktail");
+INSERT INTO store VALUES (13, "mini dress-velvet purple", 6, 50.79, "cocktail");
+INSERT INTO store VALUES (14, "mini sparkle dress-black", 2, 54.79, "cocktail");
+INSERT INTO store VALUES (15, "mini sparkle dress-pink", 4, 54.79, "cocktail");
+
+
+--display database ordered by price--
+SELECT * FROM store
+ORDER BY price;
+
+--what items have low stock (2 or less)--
+SELECT item, stock FROM store 
+WHERE stock <= 2;
+
+--what items are for cocktail events--
+Select * FROM store
+WHERE occasion = "cocktail";
